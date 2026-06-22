@@ -20,40 +20,34 @@ export default function About() {
           <div className="divider" />
 
           <p style={{ color: "var(--muted)", fontSize: "1.05rem", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-            I&apos;m a recent Software Engineering graduate driven by a passion for building
-            scalable, intelligent systems. My interests span across cloud infrastructure,
-            modern full-stack development, and the rapidly evolving world of AI technologies.
+            Software Engineering graduate from Jeddah University with a strong interest in Cloud Computing,
+            Full-Stack Development, and Artificial Intelligence. Passionate about designing and developing
+            scalable software solutions that solve real problems.
           </p>
-          <p style={{ color: "var(--muted)", fontSize: "1.05rem", lineHeight: 1.8, marginBottom: "2rem" }}>
-            I thrive at the intersection of technology and problem-solving — always looking
-            for opportunities to turn complex challenges into elegant, efficient solutions.
-            I&apos;m eager to contribute to teams that push the boundaries of what software can do.
+          <p style={{ color: "var(--muted)", fontSize: "1.05rem", lineHeight: 1.8 }}>
+            Skilled in building mobile and web applications using modern technologies, with hands-on experience
+            from an internship at King Abdulaziz University and multiple real-world projects.
           </p>
-
         </div>
 
-        {/* Right: stats/highlights */}
+        {/* Right: highlights */}
         <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
           {[
             {
-              icon: "",
               title: "Fresh Graduate",
-              desc: "Bachelor of Software Engineering — ready to apply knowledge in the real world",
+              desc: "Bachelor of Software Engineering from Jeddah University — GPA 4.05/5",
             },
             {
-              icon: "",
               title: "Cloud Computing",
               desc: "Passionate about cloud infrastructure, scalability, and distributed systems",
             },
             {
-              icon: "",
               title: "AI Technologies",
-              desc: "Interested in machine learning, large language models, and AI-driven applications",
+              desc: "Experienced with AI bootcamps and building AI-powered mobile applications",
             },
             {
-              icon: "",
-              title: "Full-Stack Development",
-              desc: "Capable of building end-to-end web applications from database to UI",
+              title: "Mobile & Web Development",
+              desc: "Built real-world apps using Flutter, Dart, Firebase, Bootstrap, and more",
             },
           ].map((item) => (
             <div
@@ -61,7 +55,6 @@ export default function About() {
               className="section-card"
               style={{ display: "flex", gap: "1rem", alignItems: "flex-start", padding: "1.2rem 1.5rem" }}
             >
-              <span style={{ fontSize: "1.6rem", lineHeight: 1, marginTop: "2px" }}>{item.icon}</span>
               <div>
                 <h4 style={{ fontWeight: 700, marginBottom: "4px", fontSize: "0.95rem" }}>{item.title}</h4>
                 <p style={{ color: "var(--muted)", fontSize: "0.85rem", lineHeight: 1.6 }}>{item.desc}</p>

@@ -1,24 +1,16 @@
-// ─────────────────────────────────────────────────────────────
-//  EXPERIENCE  —  add your jobs/internships here when you have them
-// ─────────────────────────────────────────────────────────────
-
-const experiences: {
-  role: string;
-  company: string;
-  period: string;
-  type: string;
-  description: string;
-  tags: string[];
-}[] = [
-  // Example (remove this and add your real experience):
-  // {
-  //   role: "Junior Software Engineer",
-  //   company: "Company Name",
-  //   period: "Jan 2025 – Present",
-  //   type: "Full-time",
-  //   description: "Brief description of what you did and what you achieved.",
-  //   tags: ["React", "Node.js", "AWS"],
-  // },
+const experiences = [
+  {
+    role: "Software Engineering Intern",
+    company: "King Abdulaziz University",
+    period: "June 2025 – August 2025",
+    type: "Internship",
+    description: [
+      "Applied front-end development concepts using Bootstrap to create responsive and user-friendly web interfaces.",
+      "Collaborated with the IT support team to troubleshoot and resolve computer software issues efficiently.",
+      "Configured and deployed approximately 8 computers by installing Linux OS and required biology applications.",
+    ],
+    tags: ["Bootstrap", "Front-End Development", "Linux", "Software Troubleshooting"],
+  },
 ];
 
 export default function Experience() {
@@ -37,73 +29,59 @@ export default function Experience() {
         <div className="divider" style={{ margin: "12px auto 0" }} />
       </div>
 
-      {experiences.length === 0 ? (
+      <div style={{ position: "relative" }}>
         <div
-          className="section-card"
-          style={{ textAlign: "center", padding: "4rem 2rem" }}
-        >
-          <p style={{ fontSize: "2.5rem", marginBottom: "1rem" }}></p>
-          <h3 style={{ fontWeight: 700, marginBottom: "0.5rem", fontSize: "1.2rem" }}>
-            Building My Journey
-          </h3>
-          <p style={{ color: "var(--muted)", maxWidth: "400px", margin: "0 auto", lineHeight: 1.7 }}>
-            Fresh graduate actively seeking my first professional role.
-            Open to internships, junior positions, and exciting opportunities.
-          </p>
-        </div>
-      ) : (
-        <div style={{ position: "relative" }}>
-          {/* Timeline line */}
-          <div
-            style={{
-              position: "absolute",
-              left: "20px",
-              top: 0,
-              bottom: 0,
-              width: "2px",
-              background: "linear-gradient(to bottom, var(--accent), transparent)",
-            }}
-          />
-          <div style={{ display: "flex", flexDirection: "column", gap: "2rem", paddingLeft: "60px" }}>
-            {experiences.map((exp, i) => (
-              <div key={i} className="section-card" style={{ position: "relative" }}>
-                {/* Timeline dot */}
-                <div
-                  style={{
-                    position: "absolute",
-                    left: "-48px",
-                    top: "1.5rem",
-                    width: "14px",
-                    height: "14px",
-                    borderRadius: "50%",
-                    background: "var(--accent)",
-                    border: "3px solid var(--background)",
-                    boxShadow: "0 0 12px rgba(201, 168, 76, 0.5)",
-                  }}
-                />
-                <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem", marginBottom: "0.5rem" }}>
-                  <div>
-                    <h3 style={{ fontWeight: 700, fontSize: "1.1rem" }}>{exp.role}</h3>
-                    <p style={{ color: "var(--accent)", fontWeight: 600, fontSize: "0.9rem" }}>{exp.company}</p>
-                  </div>
-                  <div style={{ textAlign: "right" }}>
-                    <p style={{ color: "var(--muted)", fontSize: "0.85rem" }}>{exp.period}</p>
-                    <span className="tag" style={{ fontSize: "0.75rem" }}>{exp.type}</span>
-                  </div>
+          style={{
+            position: "absolute",
+            left: "20px",
+            top: 0,
+            bottom: 0,
+            width: "2px",
+            background: "linear-gradient(to bottom, var(--accent), transparent)",
+          }}
+        />
+        <div style={{ display: "flex", flexDirection: "column", gap: "2rem", paddingLeft: "60px" }}>
+          {experiences.map((exp, i) => (
+            <div key={i} className="section-card" style={{ position: "relative" }}>
+              <div
+                style={{
+                  position: "absolute",
+                  left: "-48px",
+                  top: "1.5rem",
+                  width: "14px",
+                  height: "14px",
+                  borderRadius: "50%",
+                  background: "var(--accent)",
+                  border: "3px solid var(--background)",
+                  boxShadow: "0 0 12px rgba(201, 168, 76, 0.5)",
+                }}
+              />
+              <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem", marginBottom: "1rem" }}>
+                <div>
+                  <h3 style={{ fontWeight: 700, fontSize: "1.1rem" }}>{exp.role}</h3>
+                  <p style={{ color: "var(--accent)", fontWeight: 600, fontSize: "0.9rem" }}>{exp.company}</p>
                 </div>
-                <p style={{ color: "var(--muted)", lineHeight: 1.7, marginBottom: "1rem", fontSize: "0.95rem" }}>
-                  {exp.description}
-                </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                  {exp.tags.map((tag) => (
-                    <span key={tag} className="tag" style={{ fontSize: "0.75rem" }}>{tag}</span>
-                  ))}
+                <div style={{ textAlign: "right" }}>
+                  <p style={{ color: "var(--muted)", fontSize: "0.85rem" }}>{exp.period}</p>
+                  <span className="tag" style={{ fontSize: "0.75rem" }}>{exp.type}</span>
                 </div>
               </div>
-            ))}
-          </div>
+              <ul style={{ paddingLeft: "1.2rem", marginBottom: "1rem" }}>
+                {exp.description.map((point, j) => (
+                  <li key={j} style={{ color: "var(--muted)", lineHeight: 1.8, fontSize: "0.95rem", marginBottom: "4px" }}>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                {exp.tags.map((tag) => (
+                  <span key={tag} className="tag" style={{ fontSize: "0.75rem" }}>{tag}</span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
-      )}
+      </div>
     </section>
   );
 }

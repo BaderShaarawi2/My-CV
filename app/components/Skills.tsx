@@ -1,27 +1,27 @@
-// ─────────────────────────────────────────────────────────────
-//  SKILLS  —  update the arrays below whenever you gain new skills
-// ─────────────────────────────────────────────────────────────
-
 const skillCategories = [
   {
-    title: "Languages & Frameworks",
-    icon: "",
-    skills: ["[Add skill here]", "[Add skill here]", "[Add skill here]"],
+    title: "Programming Languages",
+    skills: ["Java", "C", "Dart"],
   },
   {
-    title: "Cloud & DevOps",
-    icon: "",
-    skills: ["[Add skill here]", "[Add skill here]", "[Add skill here]"],
+    title: "Mobile Development",
+    skills: ["Flutter", "Firebase"],
   },
   {
-    title: "AI & Machine Learning",
-    icon: "",
-    skills: ["[Add skill here]", "[Add skill here]", "[Add skill here]"],
+    title: "Web & Frontend",
+    skills: ["Front-End Development", "Bootstrap", "HTML/CSS"],
   },
   {
     title: "Tools & Platforms",
-    icon: "",
-    skills: ["[Add skill here]", "[Add skill here]", "[Add skill here]"],
+    skills: ["GitHub", "Linux", "Microsoft Office"],
+  },
+  {
+    title: "AI & Emerging Tech",
+    skills: ["Artificial Intelligence"],
+  },
+  {
+    title: "Professional Skills",
+    skills: ["Problem Solving", "Teamwork", "Communication", "Customer-Oriented", "Software Troubleshooting"],
   },
 ];
 
@@ -56,12 +56,9 @@ export default function Skills() {
         >
           {skillCategories.map((cat) => (
             <div key={cat.title} className="section-card">
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "1.2rem" }}>
-                <span style={{ fontSize: "1.4rem" }}>{cat.icon}</span>
-                <h3 style={{ fontWeight: 700, fontSize: "0.95rem", color: "var(--accent)" }}>
-                  {cat.title}
-                </h3>
-              </div>
+              <h3 style={{ fontWeight: 700, fontSize: "0.95rem", color: "var(--accent)", marginBottom: "1.2rem" }}>
+                {cat.title}
+              </h3>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 {cat.skills.map((skill) => (
                   <span key={skill} className="tag">{skill}</span>
@@ -70,10 +67,6 @@ export default function Skills() {
             </div>
           ))}
         </div>
-
-        <p style={{ textAlign: "center", color: "var(--muted)", fontSize: "0.85rem", marginTop: "2rem" }}>
-          Skills are being updated — check back soon.
-        </p>
       </div>
     </section>
   );

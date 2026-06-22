@@ -1,25 +1,18 @@
-// ─────────────────────────────────────────────────────────────
-//  CONTACT  —  update your links below
-// ─────────────────────────────────────────────────────────────
-
 const contactLinks = [
   {
-    icon: "",
     label: "Email",
     value: "badermshaarawi@gmail.com",
     href: "mailto:badermshaarawi@gmail.com",
   },
   {
-    icon: "",
     label: "LinkedIn",
-    value: "linkedin.com/in/[your-username]",
-    href: "https://linkedin.com/in/[your-username]",
+    value: "linkedin.com/in/bader-shaarawi",
+    href: "https://www.linkedin.com/in/bader-shaarawi",
   },
   {
-    icon: "",
-    label: "GitHub",
-    value: "github.com/[your-username]",
-    href: "https://github.com/[your-username]",
+    label: "Phone",
+    value: "+966 56 593 9692",
+    href: "tel:+966565939692",
   },
 ];
 
@@ -54,7 +47,7 @@ export default function Contact() {
           <a
             key={link.label}
             href={link.href}
-            target={link.href.startsWith("mailto") ? undefined : "_blank"}
+            target={link.href.startsWith("http") ? "_blank" : undefined}
             rel="noopener noreferrer"
             className="section-card"
             style={{
@@ -68,7 +61,6 @@ export default function Contact() {
               cursor: "pointer",
             }}
           >
-            <span style={{ fontSize: "2rem" }}>{link.icon}</span>
             <span style={{ fontWeight: 700, fontSize: "0.9rem", color: "var(--accent)" }}>{link.label}</span>
             <span style={{ color: "var(--muted)", fontSize: "0.8rem", wordBreak: "break-all" }}>{link.value}</span>
           </a>

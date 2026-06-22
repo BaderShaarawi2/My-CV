@@ -1,24 +1,29 @@
-// ─────────────────────────────────────────────────────────────
-//  EDUCATION  —  update your degree details below
-// ─────────────────────────────────────────────────────────────
-
 const education = [
   {
     degree: "Bachelor of Software Engineering",
-    institution: "[Your University Name]",
-    period: "[Start Year] – [Graduation Year]",
-    gpa: "[Your GPA]",
+    institution: "Jeddah University — Jeddah, KSA",
+    period: "2022 – 2026",
+    gpa: "4.05 / 5",
     highlights: [
-      "[Add relevant course here]",
-      "[Add relevant course here]",
-      "[Add relevant course here]",
+      "Cloud Computing",
+      "Full-Stack Development",
+      "Artificial Intelligence",
+      "Mobile Application Development",
     ],
   },
 ];
 
-const certifications: { name: string; issuer: string; year: string }[] = [
-  // Add certifications here as you earn them:
-  // { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", year: "2025" },
+const certifications = [
+  {
+    name: "Microsoft Office Specialist (Excel 2019)",
+    issuer: "Microsoft",
+    year: "Feb 2026",
+  },
+  {
+    name: "AI Innovation Bootcamp",
+    issuer: "Google Developer Group",
+    year: "May 2026",
+  },
 ];
 
 export default function Education() {
@@ -49,23 +54,23 @@ export default function Education() {
             <h3 style={{ color: "var(--accent)", fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
               Degrees
             </h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-              {education.map((edu, i) => (
-                <div key={i} className="section-card">
-                  <h3 style={{ fontWeight: 800, fontSize: "1.05rem", marginBottom: "4px" }}>{edu.degree}</h3>
-                  <p style={{ color: "var(--accent)", fontWeight: 600, fontSize: "0.9rem", marginBottom: "4px" }}>{edu.institution}</p>
-                  <p style={{ color: "var(--muted)", fontSize: "0.85rem", marginBottom: "12px" }}>{edu.period} {edu.gpa && `· GPA: ${edu.gpa}`}</p>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-                    {edu.highlights.map((h, j) => (
-                      <div key={j} style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
-                        <span style={{ color: "var(--accent)", marginTop: "2px", flexShrink: 0 }}>▸</span>
-                        <span style={{ color: "var(--muted)", fontSize: "0.88rem" }}>{h}</span>
-                      </div>
-                    ))}
-                  </div>
+            {education.map((edu, i) => (
+              <div key={i} className="section-card">
+                <h3 style={{ fontWeight: 800, fontSize: "1.05rem", marginBottom: "4px" }}>{edu.degree}</h3>
+                <p style={{ color: "var(--accent)", fontWeight: 600, fontSize: "0.9rem", marginBottom: "4px" }}>{edu.institution}</p>
+                <p style={{ color: "var(--muted)", fontSize: "0.85rem", marginBottom: "12px" }}>
+                  {edu.period} &nbsp;·&nbsp; GPA: {edu.gpa}
+                </p>
+                <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+                  {edu.highlights.map((h, j) => (
+                    <div key={j} style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
+                      <span style={{ color: "var(--accent)", marginTop: "2px", flexShrink: 0 }}>▸</span>
+                      <span style={{ color: "var(--muted)", fontSize: "0.88rem" }}>{h}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
           {/* Certifications */}
@@ -73,26 +78,15 @@ export default function Education() {
             <h3 style={{ color: "var(--accent)", fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
               Certifications
             </h3>
-            {certifications.length === 0 ? (
-              <div className="section-card" style={{ textAlign: "center", padding: "3rem 2rem" }}>
-                <p style={{ fontSize: "2rem", marginBottom: "0.8rem" }}></p>
-                <p style={{ color: "var(--muted)", fontSize: "0.9rem", lineHeight: 1.7 }}>
-                  Currently pursuing certifications in Cloud Computing and AI.
-                  <br />
-                  <span style={{ color: "var(--accent)", fontSize: "0.8rem" }}>Check back soon!</span>
-                </p>
-              </div>
-            ) : (
-              <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                {certifications.map((cert, i) => (
-                  <div key={i} className="section-card" style={{ padding: "1.2rem 1.5rem" }}>
-                    <h4 style={{ fontWeight: 700, fontSize: "0.95rem" }}>{cert.name}</h4>
-                    <p style={{ color: "var(--accent)", fontSize: "0.85rem" }}>{cert.issuer}</p>
-                    <p style={{ color: "var(--muted)", fontSize: "0.8rem" }}>{cert.year}</p>
-                  </div>
-                ))}
-              </div>
-            )}
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              {certifications.map((cert, i) => (
+                <div key={i} className="section-card" style={{ padding: "1.2rem 1.5rem" }}>
+                  <h4 style={{ fontWeight: 700, fontSize: "0.95rem", marginBottom: "4px" }}>{cert.name}</h4>
+                  <p style={{ color: "var(--accent)", fontSize: "0.85rem" }}>{cert.issuer}</p>
+                  <p style={{ color: "var(--muted)", fontSize: "0.8rem", marginTop: "4px" }}>{cert.year}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
